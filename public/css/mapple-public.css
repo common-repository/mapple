@@ -1,0 +1,115 @@
+/* map canvas */
+
+.mapple__canvas {
+	height: 400px;
+	width: 100%;
+}
+
+/* basic table */
+
+.mapple__table thead tr {
+	border-bottom: 2px solid #bfbfbf;
+}
+
+.mapple__table thead th {
+	text-align: left;
+	text-transform: uppercase;
+}
+
+.mapple__table tbody tr:hover {
+	background-color: #eee;
+}
+
+.mapple__table th,
+.mapple__table td {
+	padding: 10px 14px;
+	border: 1px solid #bfbfbf;
+	position: relative;
+	vertical-align: middle;
+}
+
+/* Responsive table */
+
+@media (max-width: 767px) {
+	.mapple__table tbody tr:hover {
+		background-color: inherit;
+	}
+
+	.mapple__table thead {
+		display: none;
+	}
+
+	.mapple__table tr,
+	.mapple__table td {
+		display: block;
+	}
+
+	.mapple__table tbody tr:not(:last-child) {
+		margin-bottom: 20px;
+	}
+
+	.mapple__table td:not(:first-child) {
+		border-top: none;
+		padding-left: 50%;
+	}
+
+	.mapple__table td:hover {
+		background-color: #eee;
+	}
+
+	.mapple__table td:first-child {
+		border-bottom-width: 2px;
+		font-weight: bold;
+	}
+
+	.mapple__table td:not(:first-child):before {
+		content: attr(data-label);
+		display: inline-block;
+		color: #777;
+		margin-left: -100%;
+		width: 100%;
+		white-space: nowrap;
+	}
+}
+
+@media (max-width: 360px) {
+	.mapple__table td:not(:first-child) {
+		padding-left: 14px;
+	}
+
+	.mapple__table td:not(:first-child):before {
+		display: block;
+		margin-left: 0;
+	}
+}
+
+/* Sort table */
+
+.mapple__sort {
+	box-sizing: border-box;
+}
+
+.mapple__sort:before {
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	width: 0.45em;
+	border-style: solid;
+	border-width: 0.1em 0.1em 0 0;
+	transform: rotate(-45deg);
+	vertical-align: middle;
+}
+
+.mapple__sort[data-mapple-sort-asc]:before {
+	border-width: 0 0 0.1em 0.1em;
+}
+
+.mapple__sort--title {
+	min-width: 170px;
+}
+
+/* Search and Filter table */
+
+.mapple__search__tags .active {
+	background: thistle;
+}
